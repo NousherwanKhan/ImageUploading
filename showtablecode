@@ -1,0 +1,15 @@
+ <tbody>
+                @foreach ($data as $d)
+                    <tr>
+                        <td>{{ $d->id }}</td>
+                        <td scope="row">{{ $d->name }}</td>
+                        <td>{{ $d->city }}</td>
+                        <td>{{ $d->gender }}</td>
+                        <td>{{ $d->language }}</td>
+                        <td><img src="{{ asset('images/' . $d->image) }}" width="100px" height="100px" alt="np"></td>
+                        <td><a href="{{ url('home/edit/' . $d->id) }}" class="btn btn-sm btn-primary">Edit</a><a
+                                href="{{ url('home/delete/' . $d->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
